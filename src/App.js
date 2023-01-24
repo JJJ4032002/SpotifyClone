@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { selectToken, setToken } from "./features/token/tokenSlice";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 const CLIENT_ID = "cc28a8f065324d06b2b26c2a03c7e1c2";
-const REDIRECT_URI = "http://localhost:3000";
+const REDIRECT_URI = "https://jjj4032002.github.io/SpotifyClone";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 const Main = styled.main`
