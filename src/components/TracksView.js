@@ -93,15 +93,17 @@ function TracksView({ drawerWidth, handleDrawerToggle }) {
   } else if (isLoading) {
     tracksContent = <CircularProgress></CircularProgress>;
   } else if (isError) {
-    if (error.data.error.message === "access token expired") {
+    if (error.data.error.message === "The access token expired") {
+      window.localStorage.removeItem("token");
       dispatch(setToken(null));
+    } else {
+      tracksContent = (
+        <>
+          <Image src={Error} alt="Error"></Image>
+          <p>{error.data.error.message}</p>
+        </>
+      );
     }
-    tracksContent = (
-      <>
-        <Image src={Error} alt="Error"></Image>
-        <p>{error.data.error.message}</p>
-      </>
-    );
   }
 
   return (
